@@ -2,7 +2,22 @@
     "name": "lottie-viewer",
     "displayName": "Lottie Viewer",
     "description": "Preview Lottie animations while you edit them",
+    "keywords": [
+        "lottie",
+        "after effet",
+        "preview",
+        "animation"
+    ],
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#fbfbfb",
+        "theme": "light"
+    },
     "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/WilliamDASILVA/lottie-viewer.git"
+    },
     "author": "William DA SILVA <william.da.silva@outlook.com>",
     "publisher": "williamdasilva",
     "engines": {
