@@ -2,7 +2,22 @@
     "name": "lottie-viewer",
     "displayName": "Lottie Viewer",
     "description": "Preview Lottie animations while you edit them",
+    "keywords": [
+        "lottie",
+        "after effet",
+        "preview",
+        "animation"
+    ],
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#fbfbfb",
+        "theme": "light"
+    },
     "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/WilliamDASILVA/lottie-viewer.git"
+    },
     "author": "William DA SILVA <william.da.silva@outlook.com>",
     "publisher": "williamdasilva",
     "engines": {
@@ -12,16 +27,24 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.lottieView"
     ],
     "main": "./extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.lottieView",
+                "title": "▶️ Lottie Preview"
             }
-        ]
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "extension.lottieView",
+                    "when": "resourceLangId == json"
+                }
+            ]
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
@@ -33,5 +56,8 @@
         "eslint": "^4.11.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "lottie-web": "^5.1.10"
     }
 }
