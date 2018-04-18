@@ -19,7 +19,7 @@
         "commands": [
             {
                 "command": "extension.lottieView",
-                "title": "Lottie Preview"
+                "title": "▶️ Lottie Preview"
             }
         ],
         "menus": {
