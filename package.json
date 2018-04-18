@@ -21,7 +21,15 @@
                 "command": "extension.lottieView",
                 "title": "Lottie Preview"
             }
-        ]
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "extension.lottieView",
+                    "when": "resourceLangId == json"
+                }
+            ]
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
@@ -33,5 +41,8 @@
         "eslint": "^4.11.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "lottie-web": "^5.1.10"
     }
 }
