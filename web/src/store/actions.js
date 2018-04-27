@@ -1,4 +1,11 @@
 export default {
+  createInstance(store, payload) {
+    const { container, data } = payload;
+    store.commit('CREATE_INSTANCE', {
+      container,
+      data,
+    });
+  },
   setLoop(store, value) {
     store.commit('SET_LOOP', value);
   },

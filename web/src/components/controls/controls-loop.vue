@@ -33,6 +33,9 @@
         'setLoop',
       ]),
     },
+    mounted() {
+      this.loop = this.isLooping;
+    },
   };
 </script>
 

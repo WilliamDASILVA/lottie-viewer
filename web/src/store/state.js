@@ -1,5 +1,6 @@
 export default {
+  instance: null,
   play: false,
-  loop: false,
+  loop: true,
   speed: 1,
 };

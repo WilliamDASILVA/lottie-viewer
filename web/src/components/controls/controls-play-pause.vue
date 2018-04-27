@@ -1,6 +1,6 @@
 <template>
   <div class="controls-play-pause">
-    <button @click="playPause">
+    <button class="btn" @click="playPause">
       {{ isPlaying ? 'Pause' : 'Play' }}
     </button>
   </div>
