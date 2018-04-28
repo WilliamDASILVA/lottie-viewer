@@ -1,5 +1,3 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const path = require('path');
 
@@ -18,10 +16,10 @@ function activate(context) {
             }
         }
 	}
-	
-	const htmlPath = path.resolve(context.extensionPath, './webview/index.html');
+
+	const htmlPath = path.resolve(context.extensionPath, './web/index.html');
   	const indexUri = vscode.Uri.file(htmlPath);
-    
+
     vscode.workspace.onDidChangeTextDocument((e) => {
         if (e.document === vscode.window.activeTextEditor.document) {
 			const data = createLottieData();
@@ -30,15 +28,7 @@ function activate(context) {
 				data,
 			});
         }
-		// if (e.document === vscode.window.activeTextEditor.document) {
-		// 	provider.update(previewUri);
-		// }
 	});
-
-	// vscode.window.onDidChangeTextEditorSelection((e) => {
-    //     console.log('ah?');
-	// });
-
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
@@ -49,14 +39,10 @@ function activate(context) {
         if (!editor) {
             return; // No open text editor
         }
-        // console.log('editor', editor);
 
-        // Display a message box to the user
-		// vscode.window.showInformationMessage('Hello World!');
-		
         return vscode.commands.executeCommand('vscode.previewHtml', indexUri, vscode.ViewColumn.Two, 'Lottie Viewer', {
 			allowScripts: true,
-		}).then((success) => {
+		}).then(() => {
 			const data = createLottieData();
 			vscode.commands.executeCommand('_workbench.htmlPreview.postMessage', indexUri, {
 				type: 'init',
