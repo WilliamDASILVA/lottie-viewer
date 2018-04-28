@@ -7,22 +7,27 @@
 <script>
   import { mapActions } from 'vuex';
 
-  import InstanceInfo from './instance/instance-info';
-
   export default {
     name: 'view-instance',
-    components: {
-      InstanceInfo,
-    },
     methods: {
       ...mapActions([
         'createInstance',
+        'updateInstanceData',
       ]),
     },
     mounted() {
-      this.createInstance({
-        container: this.$refs.animation,
-        data: require('./../assets/leds.json'),
+      window.addEventListener('message', e => {
+        const { type, data } = e.data;
+        if (type === 'init') {
+          this.createInstance({
+            container: this.$refs.animation,
+            data,
+          });
+        } else if (type === 'update') {
+          this.updateInstanceData({
+            data,
+          });
+        }
       });
     },
   };

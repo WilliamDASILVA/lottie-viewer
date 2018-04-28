@@ -1,4 +1,10 @@
 export default {
+  getAnimationData(state) {
+    return state.animationData;
+  },
+  getContainer(state) {
+    return state.container;
+  },
   isLooping(state) {
     return state.instance ? state.instance.isLooping : state.loop;
   },
